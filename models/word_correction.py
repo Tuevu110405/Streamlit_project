@@ -5,7 +5,7 @@ def load_vocab(file_path):
     words = sorted(set([lines.strip(). lower() for _ in lines]))
     return words
 
-vocabs = load_vocab ( file_path ="G:\AIO2024\Home_work\module 1\Project1\source\source\data\vocab.txt")
+vocabs = load_vocab ( file_path ="./data/vocab.txt")
 
 import numpy as np
 
