@@ -1,11 +1,6 @@
-def load_vocab(file_path):
-    with open(file_path,'r') as f:
-        lines = f.readlines()
-    
-    words = sorted(set([lines.strip(). lower() for _ in lines]))
-    return words
+import os
 
-vocabs = load_vocab ( file_path ="./data/vocab.txt")
+
 
 import numpy as np
 
@@ -38,13 +33,16 @@ def levenshtein_distance(str1, str2):
 import streamlit as st
 
 def load_vocab(file_path):
-    with open(file_path, 'r') as f:
+    with open(file_path, "r") as f:
         lines = f.readlines()
     words = sorted(set([line.strip().lower() for line in lines]))
     return words
-vocabs = load_vocab(file_path='./vocab.txt')
+
 
 def main():
+    base = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    vocabs = load_vocab(os.path.join(base, 'data', 'vocab.txt'))
+
     st.title("Word Correction using Levenshtein Distance")
     word = st.text_input('Word:')
 
