@@ -13,7 +13,7 @@ with st.sidebar:
     if not (hf_email and hf_pass):
         st.warning('Please enter your account!')
     else:
-        st.sucess('Proceed to entering your prompt message!')
+        st.success('Proceed to entering your prompt message!')
 
 #Store LLM generated reponses
 if "message" not in st.session_state.keys():
